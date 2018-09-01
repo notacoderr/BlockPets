@@ -85,7 +85,6 @@ use pocketmine\item\ItemFactory;
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\lang\BaseLang;
-use spoondetector\SpoonDetector;
 
 class Loader extends PluginBase {
 
@@ -229,9 +228,6 @@ class Loader extends PluginBase {
 
 		$this->saveResource("database_stmts/mysql.sql", true);
 		$this->saveResource("database_stmts/sqlite.sql", true);
-
-		SpoonDetector::printSpoon($this);
-
 		$this->registerEntities();
 		$this->registerItems();
 		$this->registerCommands();
