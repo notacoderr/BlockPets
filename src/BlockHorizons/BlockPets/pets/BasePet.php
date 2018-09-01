@@ -457,9 +457,8 @@ abstract class BasePet extends Creature implements Rideable {
 		return $this->getPetName();
 	}
 
-	protected function initEntity(): void {
-		parent::initEntity();
-		$this->selectProperties();
+	protected function initEntity(CompoundTag $nbt): void {
+    parent::initEntity($nbt);
 
 		$this->petLevel = $this->namedtag->getInt("petLevel", 1);
 		$this->petLevelPoints = $this->namedtag->getInt("petLevelPoints", 0);
@@ -531,7 +530,7 @@ abstract class BasePet extends Creature implements Rideable {
 	 *
 	 * @return int
 	 */
-	public function getAttackDamage(): int {
+	public function getAttackDamage(): float {
 		return $this->attackDamage;
 	}
 
@@ -540,7 +539,7 @@ abstract class BasePet extends Creature implements Rideable {
 	 *
 	 * @param int $amount
 	 */
-	public function setAttackDamage(int $amount): void {
+	public function setAttackDamage(float $damage): void{
 		$this->attackDamage = $amount;
 	}
 
